@@ -1,0 +1,33 @@
+{
+  "name": "github-trending-api",
+  "version": "0.0.1",
+  "description": "The official v3 API don't consist of the 'trending' and 'explore', here is an patch API for that :lollipop:",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/879479119/Github-Trending-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/879479119/Github-Trending-API/issues"
+  },
+  "homepage": "https://github.com/879479119/Github-Trending-API#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "~1.13.2",
+    "cheerio": "^0.22.0",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "iconv-lite": "^0.4.17",
+    "jade": "~1.11.0",
+    "mongoose": "^4.10.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
