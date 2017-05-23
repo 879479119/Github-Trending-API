@@ -31,11 +31,11 @@ function getPageInHtml(relativeUrl = "/trending", span){
 	}).then(function (html) {
 		let file = relativeUrl.match(/^((\/[\w-]+)+)/)
 		if(file === null) throw Error("url should looks like '/a/b', but even '/a/a/a-c/s/?p=1#2222' works")
-		let param = relativeUrl.split('?')[1]
-		let write = fs.createWriteStream(__dirname+`/../store${file[2] + (param || "")}.html`)
-		write.write(html)
-		console.log("Over")
-		write.close()
+		// let param = relativeUrl.split('?')[1]
+		// let write = fs.createWriteStream(__dirname+`/../store${file[2] + (param || "")}.html`)
+		// write.write(html)
+		// console.log("Over")
+		// write.close()
 		return html
 	})
 }
