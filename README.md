@@ -1,7 +1,7 @@
 # Github-Trending-API
 The official v3 API don't consist of the 'trending' and 'explore', here is an patch API for that :lollipop:
 
-**The data will update every one hour**
+**The data will update every one hour, and it updates lazily what means you may wait a long time if you are try getting a language that nobody accessed in the last one hour**
 
 ## Usage 
 
@@ -16,31 +16,62 @@ the Ali server doesn't allow me to provide service without being recorded, so th
 
 Built with `express` + `cheerio` + `mongodb`
 
-here is the preview format of repo:
+**Repository Format**
 ```json
 [
     {
-        "repo": "/gentilkiwi/wanakiwi",
-        "description": "Automated wanadecrypt with key recovery if lucky",
-        "language": "C",
-        "star": 396,
-        "fork": 116,
-        "today": 104,
+        "repo": "/facebook/prepack",
+        "description": "Prepack is a partial evaluator for JavaScript. Prepack rewrites a JavaScript bundle, resulting in JavaScript code that executes more efficiently.",
+        "language": "JavaScript",
+        "star": 9138,
+        "fork": 225,
+        "monthly": 9128,
         "user": [
             {
-                "contributor": "msuiche",
-                "avatar": "https://avatars1.githubusercontent.com/u/1621145?v=3&s=40"
+                "contributor": "NTillmann",
+                "avatar": "https://avatars0.githubusercontent.com/u/6457462?v=3&s=40"
             },
             {
-                "contributor": "gentilkiwi",
-                "avatar": "https://avatars2.githubusercontent.com/u/2307945?v=3&s=40"
+                "contributor": "hermanventer",
+                "avatar": "https://avatars0.githubusercontent.com/u/4325251?v=3&s=40"
+            },
+            {
+                "contributor": "sebmarkbage",
+                "avatar": "https://avatars0.githubusercontent.com/u/63648?v=3&s=40"
+            },
+            {
+                "contributor": "cblappert",
+                "avatar": "https://avatars0.githubusercontent.com/u/3744743?v=3&s=40"
+            },
+            {
+                "contributor": "dkrew0213",
+                "avatar": "https://avatars1.githubusercontent.com/u/7864184?v=3&s=40"
             }
         ],
-        "lastModified": "2017-05-21T16:22:40.402Z",
-        "label": "/trending/c"
+        "lastModified": "2017-05-23T06:46:51.571Z",
+        "label": ""
     }
 ]
 ```
+
+**Developer Format**
+```json
+[
+    {
+        "avatar": "https://avatars0.githubusercontent.com/u/69631?v=3&s=192",
+        "type": "Org",
+        "name": "facebook",
+        "monthly": true,
+        "full_name": "Facebook",
+        "repo": "react",
+        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+        "lastModified": "2017-05-23T06:43:33.797Z",
+        "label": "/trending/developers"
+    }
+]
+```
+
+
 If any exception happens, you will get an empty array
 
 ### Addition

@@ -21,20 +21,6 @@ router.get('/trending', function (req, respond, next) {
 		respond.send([])
 	})
 });
-router.get('/trending/:lang', function (req, respond, next) {
-	let span = req.query.span || 'daily'
-	getRepo({
-		url: '/trending/' + req.params.lang,
-		span
-	}).then(res => {
-		respond.send(res)
-	}).catch(err => {
-		console.error(err)
-		respond.send([])
-	})
-});
-
-
 
 router.get('/trending/developers', function (req, respond, next) {
 	let span = req.query.span || 'daily'
@@ -49,6 +35,20 @@ router.get('/trending/developers', function (req, respond, next) {
 		respond.send([])
 	})
 });
+
+router.get('/trending/:lang', function (req, respond, next) {
+	let span = req.query.span || 'daily'
+	getRepo({
+		url: '/trending/' + req.params.lang,
+		span
+	}).then(res => {
+		respond.send(res)
+	}).catch(err => {
+		console.error(err)
+		respond.send([])
+	})
+});
+
 router.get('/trending/developers/:lang', function (req, respond, next) {
 	let span = req.query.span || 'daily'
 	getDev({
