@@ -6,14 +6,9 @@ function insert(obj, url) {
 	let repo = new Repo(obj)
 
 	return new Promise((resolve, reject)=>{
-		repo.remove({ label: url }, function(err, res){
+		repo.save(function (err, res) {
 			if (err) reject(err)
-			else {
-				repo.save(function (err, res) {
-					if (err) reject(err)
-					else resolve(res)
-				})
-			}
+			else resolve(res)
 		})
 	})
 }

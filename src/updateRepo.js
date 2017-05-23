@@ -4,10 +4,10 @@ let parseRepo = require('./parseRepo')
 let addRepo = require('./addRepo')
 let removeRepo = require('./removeRepo')
 
-module.exports = function (url) {
-	return getPageInHtml(url).then(html=>{
-		let arr = parseRepo(html)
-		return removeRepo(url, arr)
+module.exports = function ({url, span}) {
+	return getPageInHtml(url, span).then(html=>{
+		let arr = parseRepo(html, span)
+		return removeRepo({url, span}, arr)
 	}).then(result=>{
 		result.map((item)=>{
 			addRepo(item, url)
