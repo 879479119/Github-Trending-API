@@ -1,12 +1,15 @@
 let Developer = require('./DevSchema')
 
-function insert(obj) {
+function insert(obj, url) {
 	obj.lastModified = new Date()
-	let repo = new Developer(obj)
+	obj.label = url
+	let dev = new Developer(obj)
 
-	repo.save(function (err, res) {
-		if (err) console.log("Error:" + err)
-		else console.log("Res:" + res)
+	return new Promise((resolve, reject)=>{
+		dev.save(function (err, res) {
+			if (err) reject(err)
+			else resolve(res)
+		})
 	})
 }
 

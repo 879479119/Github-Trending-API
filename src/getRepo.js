@@ -14,7 +14,7 @@ function getByConditions({url= '', span='daily'}){
 			else resolve(res)
 		})
 	}).then(res=>{
-		let interval = 1000 * 60 * 60 * 24
+		let interval = 1000 * 60 * 60
 		if(res.length === 0 || Date.now() - new Date(res[0].lastModified).getTime() > interval){
 			return updateRepo({url, span})
 		}else{

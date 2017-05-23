@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let getRepo = require('../src/getRepo')
+let getDev = require('../src/getDev')
 
 /* GET home page. */
 router.get('/trending', function (req, respond, next) {
@@ -32,7 +33,32 @@ router.get('/trending/:lang', function (req, respond, next) {
 		respond.send([])
 	})
 });
-router.get('/trending/:lang/:develop', function (req, res, next) {
-	res.render('index', {title: 'Express'});
+
+
+
+router.get('/trending/developers', function (req, respond, next) {
+	let span = req.query.span || 'daily'
+
+	getDev({
+		url: '/trending/developers',
+		span
+	}).then(res => {
+		respond.send(res)
+	}).catch(err => {
+		console.error(err)
+		respond.send([])
+	})
+});
+router.get('/trending/developers/:lang', function (req, respond, next) {
+	let span = req.query.span || 'daily'
+	getDev({
+		url: '/trending/developers/' + req.params.lang,
+		span
+	}).then(res => {
+		respond.send(res)
+	}).catch(err => {
+		console.error(err)
+		respond.send([])
+	})
 });
 module.exports = router;

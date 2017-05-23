@@ -5,6 +5,12 @@ let fs = require('fs')
 function parseRepo (html, span) {
 	let $ = cheerio.load(html)
 	let k = []
+
+	//empty content
+	if($('.blankslate').length !== 0){
+		return []
+	}
+
 	$('.repo-list').find('li').each((index, item)=> {
 		let repo = $(item).find('.d-inline-block').find('a').attr('href').trim()
 		let description = $(item).find('.py-1').find('p').text().replace(/\n\s+(.+)\n\s+/,'$1')
@@ -40,9 +46,9 @@ function parseRepo (html, span) {
 	})
 	return k
 }
-
-let ht = fs.readFileSync('../store/ampl.html','utf8')
-console.info(parseRepo(ht,'daily'))
+//
+// let ht = fs.readFileSync('../store/ampl.html','utf8')
+// // console.info(parseRepo(ht,'daily'))
 // parseRepo(ht,'234')
 //
 // parseRepo(ht).map(addRepo)
