@@ -28,11 +28,12 @@ function parseRepo (html, span) {
 		let temp = $(item).find('.float-right').text().match(/([\d,]+)/)
 		let count = temp === null ? 0 : temp[0]
 
+		// console.info(result)
 		//unknown languages
-		if(result[5] === '' && result[1].match(/\w/) === null){
+		if(result[5] === '' && result[1].match(/[a-zA-Z]/) === null){
 			result[5] = result[3]
 			result[3] = result[1]
-			result[1] = ''
+			result[1] = 'unknown'
 		}
 
 		k.push({
@@ -47,8 +48,8 @@ function parseRepo (html, span) {
 	return k
 }
 //
-// let ht = fs.readFileSync('../store/ampl.html','utf8')
-// // console.info(parseRepo(ht,'daily'))
+// let ht = fs.readFileSync('../store/unknown.html','utf8')
+// console.info(parseRepo(ht,'daily'))
 // parseRepo(ht,'234')
 //
 // parseRepo(ht).map(addRepo)

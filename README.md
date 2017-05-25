@@ -16,6 +16,8 @@ the Ali server doesn't allow me to provide service without being recorded, so th
 
 Built with `express` + `cheerio` + `mongodb`
 
+You can use CORS to get data in the browser
+
 **Repository Format**
 ```json
 [
