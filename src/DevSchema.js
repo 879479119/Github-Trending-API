@@ -12,6 +12,7 @@ const DevSchema = new Schema({
 	monthly: {type: Number},
 	repo: {type: String},
 	lastModified: {type: Date},
+	description: {type: String}
 })
 
 module.exports = mongoose.model('Developer', DevSchema, 'developers')
