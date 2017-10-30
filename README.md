@@ -1,11 +1,11 @@
 # Github-Trending-API
-The official v3 API don't consist of the 'trending' and 'explore', here is an patch API for that :lollipop:
+The official API(v3) don't consist of the fields 'trending' and 'explore', here is an patch API for that :lollipop:
 
-**The data will update every one hour, and it updates lazily what means you may wait a long time if you are try getting a language that nobody accessed in the last one hour**
+**The data will update every one hour, and it updates lazily which means that you may wait for a long time if you are try querying a language that nobody has accessed in the last one hour**
 
 ## Usage 
 
-the Ali server doesn't allow me to provide service without being recorded, so the URL starts with IP address
+Just copy the IP adress and paste it in your application, ~~I cannot afford a domain, maybe~~.
 
 #### Trending
 + `http://120.24.49.153:3000/trending` - repos in all languages
